@@ -9,26 +9,7 @@ import {
 } from "react-icons/fa";
 
 
-export const footerVariants = {
-  hidden: {
-    opacity: 0,
-    y: -50,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 140,
-    },
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 80,
-      delay: 0.1,
-    },
-  },
-};
+
 function Footer() {
   const SocialShare = [
     { Social: <FaFacebookF size={18} />, link: "https://www.facebook.com/" },
@@ -47,7 +28,7 @@ function Footer() {
     className="py-3 lg:px-10 lg:py-3 w-full  text-center text-[#c0bbbb] bg-neutral-900 overflow-hidden">
       <div className="container mx-auto flex flex-col lg:flex-row gap-4 justify-between items-center">
         <div>
-          <Image src="/Ghost.svg" height={40} width={40} objectFit="contain" />
+          <Image src="/Ghost.svg" height={40} width={40} objectFit="contain" alt="" />
         </div>
         <p>Copyright © 2022 Otto Programmer. All Rights Reserved.</p>
         <div className="flex gap-2">
