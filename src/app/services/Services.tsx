@@ -37,8 +37,8 @@ function Services() {
         ref={scrollRef}
         className="grid md:grid-cols-3 gap-4 lg:w-4/5 items-center mx-auto mt-[2rem] py-12 "
       >
-        <div className="bg-neutral-900/60  h-full drop-shadow-2xl cursor-pointer px-3 py-6 rounded-lg hover:bg-gradient-to-r  text-white lg:text-gray-400 hover:bg-neutral-900/95 transition-all ease-in-out	hover:text-white duration-950	hover:-translate-y-1  ">
-          <GoDeviceDesktop size={42} className="w-full text-pink-950" />
+        <div className="bg-neutral-900/60 h-full drop-shadow-2xl cursor-pointer px-3 py-6 rounded-lg hover:bg-gradient-to-r  text-white lg:text-gray-400 hover:bg-neutral-900/70 transition-all ease-in-out	hover:text-white duration-700	hover:-translate-y-1  ">
+          <GoDeviceDesktop size={42} className="w-full text-pink-700" />
           <h1 className="text-gray-100 p-2 font-bold text-3xl w-full mx-auto text-center">
             Web Development
           </h1>

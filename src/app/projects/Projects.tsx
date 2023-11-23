@@ -16,7 +16,7 @@ function Projects() {
         <div>
           <ProjectsItem
             title="Portfolio"
-            src="/lucy.png"
+            src="https://i.imgur.com/LrGJMZP.png"
             url="https://ottocomponents.vercel.app"
             desc={`A Portfolio Template.`}
           />
@@ -24,7 +24,7 @@ function Projects() {
         <div>
           <ProjectsItem
             title="Movie App"
-            src="/otmovies.png"
+            src="https://i.imgur.com/dOhXAMf.png"
             url="https://otmovies.vercel.app"
             desc={`Movie app based on TMDB api.`}
           />
@@ -33,7 +33,7 @@ function Projects() {
         <div>
           <ProjectsItem
             title="Anime App"
-            src="/anifaze.png"
+            src="https://i.imgur.com/4YB0Bac.png"
             url="https://anifaze.herokuapp.com"
             desc={`Anime Streaming web app.`}
           />
@@ -42,7 +42,7 @@ function Projects() {
         <div>
           <ProjectsItem
             title="Video Converter"
-            src="/animex.png"
+            src="https://i.imgur.com/zSc6PZj.png"
             url="https://www.animex.live"
             desc={`Anime Streaming web app.`}
           />
@@ -50,7 +50,7 @@ function Projects() {
         <div>
           <ProjectsItem
             title="Test Your Knowledge"
-            src="/animex.png"
+            src="https://i.imgur.com/sNsftH6.png"
             url="https://www.animex.live"
             desc={`Anime Streaming web app.`}
           />
