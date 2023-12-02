@@ -38,7 +38,7 @@ function Header() {
     setShow(!show);
   };
   return (
-    <div className="md:w-2/3 md:rounded-xl mx-auto absolute md:mt-5 p-2 shadow-2xl bg-neutral-900/75 z-50 inset-0 max-h-fit   drop-shadow-2xl ">
+    <div className="md:w-2/3 bg-[radial-gradient(circle_farthest-side,rgba(0,20,255,.15),rgba(240,240,240,0))] md:rounded-xl mx-auto absolute md:mt-5 p-2 shadow-2xl bg-neutral-700/30 z-50 inset-0 max-h-fit   drop-shadow-2xl ">
       <div
         // variants={navVariants}
         // initial="hidden"
@@ -54,51 +54,11 @@ function Header() {
         />
 
         <div className="hidden md:flex items-center text-lg gap-4 ">
-          <Link
-            // activeClass="active"
-            href="/"
-          >
-            {/* <HeaderItem title="Home" /> */}
-            <span className="text-neutral-400  hover:text-white cursor-pointer">
-              Home
-            </span>
-          </Link>
-          <Link
-            // activeClass="active"
-            href="/about"
-          >
-            {/* <HeaderItem title="Home" /> */}
-            <span className="text-neutral-400  hover:text-white cursor-pointer">
-              About
-            </span>
-          </Link>
-          <Link
-            // activeClass="active"
-            href="/services"
-          >
-            {/* <HeaderItem title="Home" /> */}
-            <span className="text-neutral-400  hover:text-white cursor-pointer">
-              Services
-            </span>
-          </Link>
-          <Link
-            // activeClass="active"
-            href="/projects"
-          >
-            {/* <HeaderItem title="Home" /> */}
-            <span className="text-neutral-400  hover:text-white cursor-pointer">
-              Projects
-            </span>
-          </Link>
-          <Link
-            // activeClass="active"
-            href="/contact"
-          >
-            {/* <HeaderItem title="Home" /> */}
-            <span className="text-neutral-400  hover:text-white cursor-pointer">
-              Contact
-            </span>
-          </Link>
+          <HeaderItem title="Home" href="/" />
+          <HeaderItem title="About" href="/about" />
+          <HeaderItem title="Services" href="/services" />
+          <HeaderItem title="Projects" href="/projects" />
+          <HeaderItem title="Contact" href="/contact" />
         </div>
         <Component />
       </div>

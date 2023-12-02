@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { SiGithub, SiTwitter, SiInstagram, SiFacebook } from "react-icons/si";
 import Link from "next/link";
+import { Transition } from "@headlessui/react";
 // import {motion} from "framer-motion"
 // import Lottie from "react-lottie-player";
 // import animationData from "../lotties/person-coding.json";
@@ -19,13 +20,25 @@ function Hero() {
   // };
 
   return (
+    <Transition
+      appear={true}
+      show={true}
+      enter="transform transition duration-700"
+      enterFrom="opacity-0 rotate-1 scale-[0.80]"
+      enterTo="opacity-100 rotate-0 scale-100"
+      leave="transform duration-300 transition ease-in-out"
+      leaveFrom="opacity-100 rotate-0 scale-100 "
+      leaveTo="opacity-0 scale-95 "
+    >
+
+
     <section className=" css-selector  " id="hero">
       
       <div className=" relative mt-0  h-screen flex items-center   mx-auto justify-between">
         <div className="w-full">
           <h1 className="text-center text-3xl p-4 	 lg:text-6xl font-black  text-gray-400">
             <span className="text-gray-200">I Design</span>,{" "}
-            <span className="text-pink-700">Build</span> &{" "}
+            <span className="text-blue-700">Build</span> &{" "}
             <span className="text-gray-200">Improve</span>
           </h1>
           <p className="text-gray-400 text-center text-xl p-2">
@@ -45,6 +58,7 @@ function Hero() {
         </div>
       </div>
     </section>
+    </Transition>
   );
 }
 

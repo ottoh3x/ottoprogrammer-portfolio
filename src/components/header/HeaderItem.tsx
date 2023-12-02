@@ -1,10 +1,21 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-function HeaderItem({ title }:{title:string}) {
+function HeaderItem({ title, href }: { title: string; href: string }) {
+  const path = usePathname();
+
   return (
-    <div className={`${title === "Contact" ? "hover:text-white hover:font-light" : "hover:text-[#007afd]"} ${title === "Home" && "border-b-[3px] border-[#007afd] text-[#007afd]" }  navitem cursor-pointer text-[#ffffff]`}>
-      {title}
-    </div>
+    <Link href={href}>
+      <span
+        className={`${
+          path === href ? "text-blue-600  font-bold" : "text-neutral-300"
+        }  hover:text-white cursor-pointer`}
+      >
+        {title}
+      </span>
+    </Link>
   );
 }
 
