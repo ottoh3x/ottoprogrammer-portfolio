@@ -34,7 +34,7 @@ function Footer() {
         <div className="flex gap-2">
           {SocialShare.map((val, i) => (
             <span
-              className="rounded-xl border-[2px] cursor-pointer border-zinc-600 p-2 hover:bg-pink-600 transition-all ease-in-out duration-500 hover:-translate-y-1 text-[#ffffff]"
+              className="rounded-xl border-[2px] cursor-pointer border-zinc-600 p-2 hover:bg-blue-600 transition-all ease-in-out duration-500 hover:-translate-y-1 text-[#ffffff]"
               key={i}
             >
               <a className="" href={`${val.link}`}>
