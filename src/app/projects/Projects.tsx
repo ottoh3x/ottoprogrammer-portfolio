@@ -50,6 +50,20 @@ function Projects() {
           desc={`Metaverse Landing Page.`}
         />
 
+<ProjectsItem
+          title="OTTOIPTV"
+          src="https://i.imgur.com/l4s3Nyx.png"
+          url="https://ottoiptv.vercel.app"
+          desc={`Iptv Service Landing Page.`}
+        />
+
+<ProjectsItem
+          title="Cafe Landing Page"
+          src="https://i.imgur.com/Grkmh4k.png"
+          url="https://master--storied-conkies-97f6c0.netlify.app/"
+          desc={`Metaverse Landing Page.`}
+        />
+
         <ProjectsItem
           title="Bank Landing Page"
           src="https://i.imgur.com/SAW9E7y.png"
@@ -88,7 +102,7 @@ function Projects() {
 
         <ProjectsItem
           title="Rabbit Game"
-          src="https://i.imgur.com/8pHiXlI.png"
+          src="https://i.imgur.com/0wcaL8u.png"
           url="https://www.animex.live"
           desc={`Anime Streaming web app.`}
         />
