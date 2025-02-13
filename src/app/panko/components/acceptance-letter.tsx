@@ -10,21 +10,21 @@ import { Select, SelectItem } from "@heroui/select";
 import { Button } from "@heroui/button";
 
 const programs = [
-  { value: "international_business", label: "International Business" },
-  { value: "business_management", label: "Business Management" },
-  { value: "dental_hygiene", label: "Dental Hygiene" },
-  { value: "information_systems", label: "Development and Maintenance of Information Systems" }
+  { value: "International Business", label: "International Business" },
+  { value: "Business Management", label: "Business Management" },
+  { value: "Dental Hygiene", label: "Dental Hygiene" },
+  { value: "Development and Maintenance of Information Systems", label: "Development and Maintenance of Information Systems" }
 ];
 export default function EditAcceptanceLetter() {
   const [formData, setFormData] = useState({
     month: "02",
-    day: "0",
+    day: "",
 
-    student_name: "Mehdi Naibi",
-    date_of_birth: "2002-07-25",
-    passport_number: "DY2127619",
+    student_name: "",
+    date_of_birth: "",
+    passport_number: "",
     program_name: "Business Management",
-    tuition_fee: "2600 EUR",
+    tuition_fee: "2600",
     nationality: "Moroccan",
   });
 
@@ -98,7 +98,7 @@ export default function EditAcceptanceLetter() {
           className="w-full"
         >
           {programs.map((program) => (
-            <SelectItem key={program.value} value={program.label}>
+            <SelectItem className="text-black" key={program.value} value={program.label}>
               {program.label}
             </SelectItem>
           ))}
