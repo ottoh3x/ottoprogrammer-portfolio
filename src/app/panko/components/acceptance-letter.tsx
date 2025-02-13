@@ -68,7 +68,7 @@ export default function EditAcceptanceLetter() {
     setFormData({ ...formData, program_name: e.target.value });
   };
   return (
-    <Card className="max-w-lg mx-auto mt-32">
+    <Card className="max-w-lg mx-auto my-32">
       <CardHeader>
         <h2 className="text-xl font-bold text-black">Acceptance Letter</h2>
       </CardHeader>
