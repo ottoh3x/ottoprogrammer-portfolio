@@ -119,7 +119,7 @@ export default function StudentRegistrationForm() {
     <form onSubmit={handleSubmit}>
       <Card className=" mx-auto">
         <CardHeader className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold">Student Study Agreement</h1>
+          <h1 className="text-2xl font-bold text-white">Student Study Agreement</h1>
         </CardHeader>
 
         <CardBody className="gap-4">
