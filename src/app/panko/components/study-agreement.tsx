@@ -190,7 +190,7 @@ export default function StudentRegistrationForm() {
               isRequired
             >
               {programs.map((program) => (
-                <SelectItem key={program.value} value={program.value}>
+                <SelectItem key={program.value} className="text-white" value={program.value}>
                   {program.label}
                 </SelectItem>
               ))}
