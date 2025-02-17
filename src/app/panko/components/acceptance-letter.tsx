@@ -112,7 +112,7 @@ export default function EditAcceptanceLetter() {
   return (
     <Card className="max-w-7xl ">
       <CardHeader className="justify-center">
-        <h2 className="text-2xl font-bold ">Acceptance Letter</h2>
+        <h2 className="text-2xl font-bold text-white ">Acceptance Letter</h2>
       </CardHeader>
       <CardBody className="gap-4 grid grid-cols-2">
         <Input label="Month" name="month" value={formData.month} readOnly />
