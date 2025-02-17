@@ -141,7 +141,7 @@ export default function EditAcceptanceLetter() {
           className="w-full"
         >
           {programs.map((program) => (
-            <SelectItem key={program.value} value={program.label}>
+            <SelectItem key={program.value} className="text-white" value={program.label}>
               {program.label}
             </SelectItem>
           ))}
