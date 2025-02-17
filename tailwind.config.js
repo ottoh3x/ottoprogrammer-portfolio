@@ -7,7 +7,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@heroui/theme/dist/components/(button|card|chip|input|modal|select|ripple|spinner|form|listbox|divider|popover|scroll-shadow).js"
+    "./node_modules/@heroui/theme/dist/components/(button|card|chip|input|modal|select|tabs|ripple|spinner|form|listbox|divider|popover|scroll-shadow).js"
   ],
   theme: {
     container: {

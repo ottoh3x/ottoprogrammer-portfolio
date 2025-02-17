@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { saveAs } from "file-saver";
 import PizZip from "pizzip";
 import Docxtemplater from "docxtemplater";
@@ -15,21 +15,42 @@ const programs = [
   { value: "Dental Hygiene", label: "Dental Hygiene" },
   { value: "Development and Maintenance of Information Systems", label: "Development and Maintenance of Information Systems" }
 ];
+
 export default function EditAcceptanceLetter() {
   const [formData, setFormData] = useState({
-    month: "02",
+    month: "",
     day: "",
-
     student_name: "",
     date_of_birth: "",
     passport_number: "",
     program_name: "Business Management",
-    tuition_fee: "2600",
+    tuition_fee: "",
     nationality: "Moroccan",
   });
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  useEffect(() => {
+    const today = new Date();
+    setFormData((prev) => ({
+      ...prev,
+      month: String(today.getMonth() + 1).padStart(2, "0"),
+      day: String(today.getDate()).padStart(2, "0"),
+    }));
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFormData((prevData) => ({
+      ...prevData,
+
+      [name]: value,
+    }))
+  }
+  const handleDateChange = (e) => {
+    const date = new Date(e.target.value);
+    if (!isNaN(date)) {
+      const formattedDate = `${String(date.getDate()).padStart(2, "0")}/${String(date.getMonth() + 1).padStart(2, "0")}/${date.getFullYear()}`;
+      setFormData({ ...formData, date_of_birth: formattedDate });
+    }
   };
 
   const generateDocument = async () => {
@@ -53,7 +74,7 @@ export default function EditAcceptanceLetter() {
           doc.render();
 
           const updatedBlob = doc.getZip().generate({ type: "blob" });
-          saveAs(updatedBlob, "Updated_Acceptance_Letter.docx");
+          saveAs(updatedBlob, `${formData?.student_name} Acceptance Letter ${formData?.program_name}.docx`);
         } catch (error) {
           console.error("Error processing document:", error);
         }
@@ -64,25 +85,44 @@ export default function EditAcceptanceLetter() {
       console.error("Error fetching document:", error);
     }
   };
+
   const handleProgramChange = (e) => {
     setFormData({ ...formData, program_name: e.target.value });
   };
+  const handleSelectChange = (value: string) => {
+    let tuition_fee = "3200"; // Default tuition fee
+    let programNameInLt = ""; // Default empty
+  
+    // Set tuition fee based on program
+    if (value === "Business Management" || value === "International Business") {
+      tuition_fee = "2600";
+    }
+  
+    // Set program name in Lithuanian
+    
+  
+    setFormData((prevData) => ({
+      ...prevData,
+      program_name: value,
+      tuition_fee: tuition_fee,
+    }));
+  };
+
   return (
-    <Card className="max-w-lg mx-auto my-32">
-      <CardHeader>
-        <h2 className="text-xl font-bold text-black">Acceptance Letter</h2>
+    <Card className="max-w-7xl ">
+      <CardHeader className="justify-center">
+        <h2 className="text-xl font-bold ">Acceptance Letter</h2>
       </CardHeader>
-      <CardBody className="gap-4">
-      <Input label="Month" name="month" value={formData.month} onChange={handleChange} />
-      <Input label="Day" name="day" value={formData.day} onChange={handleChange} />
+      <CardBody className="gap-4 grid grid-cols-2">
+        <Input label="Month" name="month" value={formData.month} readOnly />
+        <Input label="Day" name="day" value={formData.day} readOnly />
 
         <Input label="Student Name" name="student_name" value={formData.student_name} onChange={handleChange} />
         <Input
           label="Date of Birth"
           name="date_of_birth"
           type="date"
-          value={formData.date_of_birth}
-          onChange={handleChange}
+          onChange={handleDateChange}
         />
         <Input
           label="Passport Number"
@@ -94,19 +134,23 @@ export default function EditAcceptanceLetter() {
           label="Program Name" 
           name="program_name"
           value={formData.program_name}
-          onChange={handleProgramChange}
+          selectedKeys={formData.program_name ? [formData.program_name] : []}
+
+          onChange={(e) => handleSelectChange(e.target.value)}
           className="w-full"
         >
           {programs.map((program) => (
-            <SelectItem className="text-black" key={program.value} value={program.label}>
+            <SelectItem key={program.value} value={program.label}>
               {program.label}
             </SelectItem>
           ))}
         </Select>
-        {/* <Input label="Program Name" name="program_name" value={formData.program_name} onChange={handleChange} /> */}
-        <Input label="Annual Tuition Fee" name="tuition_fee" value={formData.tuition_fee} onChange={handleChange} />
+        <Input label="Annual Tuition Fee" startContent={
+                <div className="pointer-events-none flex items-center">
+                  <span className="text-default-400 text-small">€</span>
+                </div>
+              } name="tuition_fee" value={formData.tuition_fee} onChange={handleChange} />
         <Input label="Nationality" name="nationality" value={formData.nationality} onChange={handleChange} />
-
       </CardBody>
       <CardFooter>
         <Button color="success" variant="bordered" onPress={generateDocument} className="w-full">
