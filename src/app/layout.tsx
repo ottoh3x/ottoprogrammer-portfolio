@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="dark bg-neutral-950">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden bg-neutral-950">
           {/* <div className="relative h-full w-full bg-slate-950">
             <div className="absolute bottom-0 left-[-10%] right-0 top-[-10%] h-screen w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0,20,255,.15),rgba(240,240,240,0))]"></div>
             <div className="absolute bottom-0 right-[-10%] top-[-10%] h-screen w-[500px] rounded-full md:bg-[radial-gradient(circle_farthest-side,rgba(0,20,255,.15),rgba(240,240,240,0))]"></div>
