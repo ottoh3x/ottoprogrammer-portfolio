@@ -14,11 +14,9 @@ const programs = [
   { value: "Business Management", label: "Business Management" },
   { value: "Dental Hygiene", label: "Dental Hygiene" },
   { value: "Development and Maintenance of Information Systems", label: "Development and Maintenance of Information Systems" },
-<<<<<<< HEAD
   { value: "Electronic Engineering and Robotics", label: "Electronic Engineering and Robotics" },
-=======
+
   { value: "Electronic Engineering and Robotics", label: "Electronic Engineering and Robotics" }
->>>>>>> 66c3b00cff05a5c8da11f0b66ab8188f274f8670
 ];
 
 export default function EditAcceptanceLetter() {
