@@ -244,10 +244,6 @@ export default function StudentDocumentsGenerator() {
       <Card className="max-w-7xl mx-auto">
         <CardHeader className="justify-center">
           <p className="text-default-500">Generate Study Agreement and Acceptance Letter</p>
-    <form onSubmit={handleSubmit}>
-      <Card className=" mx-auto">
-        <CardHeader className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold text-white">Student Study Agreement</h1>
         </CardHeader>
         
         <CardBody className="gap-4">
@@ -333,7 +329,7 @@ export default function StudentDocumentsGenerator() {
               isRequired
             >
               {programs.map((program) => (
-                <SelectItem key={program.value} className="text-white" value={program.value}>
+                <SelectItem key={program.value} value={program.value}>
                   {program.label}
                 </SelectItem>
               ))}
