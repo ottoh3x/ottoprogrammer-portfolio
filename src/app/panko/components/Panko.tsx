@@ -5,13 +5,14 @@ import React from "react";
 // import StudentTable from './components/students-table'
 import {Tabs, Tab, Input, Link, Button, Card, CardBody} from "@heroui/react";
 import EditAcceptanceLetter from "./acceptance-letter";
-import StudentRegistrationForm from "./study-agreement";
+import StudentTable from "./students-table";
+import StudentDocumentsGenerator from "./study-agreement";
 
 export default function Panko() {
     const [selected, setSelected] = React.useState("login");
 
   return (
-    <div className="flex mt-32 mx-auto justify-center">
+    <div className="flex mt-32 mx-auto justify-center min-h-full">
 
       <Card className="max-w-5xl w-full">
         <CardBody className="overflow-hidden">
@@ -27,7 +28,7 @@ export default function Panko() {
 
             </Tab>
             <Tab key="study-agreement" title="Study Agreement">
-            <StudentRegistrationForm />
+            <StudentDocumentsGenerator />
 
             </Tab>
           </Tabs>
