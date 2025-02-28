@@ -14,7 +14,11 @@ const programs = [
   { value: "Business Management", label: "Business Management" },
   { value: "Dental Hygiene", label: "Dental Hygiene" },
   { value: "Development and Maintenance of Information Systems", label: "Development and Maintenance of Information Systems" },
+<<<<<<< HEAD
   { value: "Electronic Engineering and Robotics", label: "Electronic Engineering and Robotics" },
+=======
+  { value: "Electronic Engineering and Robotics", label: "Electronic Engineering and Robotics" }
+>>>>>>> 66c3b00cff05a5c8da11f0b66ab8188f274f8670
 ];
 
 export default function EditAcceptanceLetter() {
@@ -112,7 +116,7 @@ export default function EditAcceptanceLetter() {
   return (
     <Card className="max-w-7xl ">
       <CardHeader className="justify-center">
-        <h2 className="text-2xl font-bold ">Acceptance Letter</h2>
+        <h2 className="text-2xl font-bold text-white ">Acceptance Letter</h2>
       </CardHeader>
       <CardBody className="gap-4 grid grid-cols-2">
         <Input label="Month" name="month" value={formData.month} readOnly />
@@ -141,7 +145,7 @@ export default function EditAcceptanceLetter() {
           className="w-full"
         >
           {programs.map((program) => (
-            <SelectItem key={program.value} value={program.label}>
+            <SelectItem key={program.value} className="text-white" value={program.label}>
               {program.label}
             </SelectItem>
           ))}
